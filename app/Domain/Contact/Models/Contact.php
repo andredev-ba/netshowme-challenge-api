@@ -2,7 +2,9 @@
 
 namespace Domain\Contact\Models;
 
-class Contact
+use Illuminate\Database\Eloquent\Model;
+
+class Contact extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -14,7 +16,8 @@ class Contact
         'email',
         'phone',
         'message',
-        'file_path'
+        'file_path',
+        'client_ip'
     ];
 
 }
