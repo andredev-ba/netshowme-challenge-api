@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('\App\Api\Contact\Controllers')->group(function () {
-  Route::get('/contacts', 'ContactController@index');
+  Route::get('/contact', 'ContactController@index');
   Route::post('/contact', 'ContactController@store');
 });
