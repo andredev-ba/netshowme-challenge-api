@@ -1,62 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Sobre o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+API desenvolvida utilizando o LARAVEL 8. Foi aplicado uma arquitetura de desenvolvimento voltado ao domínio, (não exatamente o DDD), porém uma adaptação que visa seguir alguns dos princípios adotados por esse conceito.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Basicamente possui 2 endpoints:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+# Retorna todos os contatos submetidos e persistidos no banco
+GET /api/contact
 
-## Learning Laravel
+# Retorna todos os contatos submetidos e persistidos no banco
+POST /api/contact
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+## Como instalar
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+# Clonar o repositório
+$ git clone https://github.com/andredev-ba/netshowme-challenge-api.git
 
-## Laravel Sponsors
+# Executar o composer install na raíz do projeto
+$ composer install
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+## Configurações iniciais
 
-### Premium Partners
+```bash
+# Criar um arquivo com o nome .env na raíz do projeto com o seguinte conteúdo
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:TgIwxzqxaqC0V0vY8FMlV6wmmZzM3bRWzBwzbbNZoaE=
+APP_DEBUG=true
+APP_URL=http://localhost:8000
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
 
-## Contributing
+DB_CONNECTION=pgsql
+DB_DATABASE=challenge_db
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+AWS_ACCESS_KEY_ID=AKIA5AXJ3K7OJQLALL5L
+AWS_SECRET_ACCESS_KEY=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
+AWS_DEFAULT_REGION=us-west-2
 
-## Code of Conduct
+#Troque as propriedades de DB do .env pelas crendencias do seu banco. Funciona com mysql também. Nesse caso, basta alterar a propriedade DB_CONNECTION para mysql.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Abra o arquivo config/config.php para informar o email que receberá os contatos
 
-## Security Vulnerabilities
+# Executar o migrate para criar a estrutura do banco de dados
+$ php artisan migrate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Expor a API localmente em localhost:8000
+$ php artisan serve
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+Para maiores detalhes de como o laravel funciona, acesse sua documentação em https://laravel.com/doc
