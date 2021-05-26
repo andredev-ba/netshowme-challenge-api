@@ -56,6 +56,9 @@ $ php artisan migrate
 # Expor a API localmente em localhost:8000
 $ php artisan serve
 
+# Para executar os testes
+$ php artisan test
+
 ```
 ## Observações importantes
 -> Um problema comum, é faltar a extensão do PHP para comunicação com o banco. Se ao executar o migrate, ocorrer um erro de comunicação, instale a extensão php do banco escolhido.
