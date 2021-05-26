@@ -11,7 +11,7 @@ Basicamente possui 2 endpoints:
 # Retorna todos os contatos submetidos e persistidos no banco
 GET /api/contact
 
-# Retorna todos os contatos submetidos e persistidos no banco
+# Valida, salva anexo, envia email e persiste os dados de contato enviados
 POST /api/contact
 
 ```
@@ -48,7 +48,6 @@ AWS_SECRET_ACCESS_KEY=LVYX0hlhw/uSh4WjCbnFX54GvQ0Rk4PYbyF2QMfo
 AWS_DEFAULT_REGION=us-west-2
 
 #Troque as propriedades de DB do .env pelas crendencias do seu banco. Funciona com mysql também. Nesse caso, basta alterar a propriedade DB_CONNECTION para mysql.
-
 # Abra o arquivo config/config.php para informar o email que receberá os contatos
 
 # Executar o migrate para criar a estrutura do banco de dados
@@ -58,4 +57,9 @@ $ php artisan migrate
 $ php artisan serve
 
 ```
-Para maiores detalhes de como o laravel funciona, acesse sua documentação em https://laravel.com/doc
+## Observações importantes
+-> Um problema comum, é faltar a extensão do PHP para comunicação com o banco. Se ao executar o migrate, ocorrer um erro de comunicação, instale a extensão php do banco escolhido.
+
+-> Outro detalhe é que por ter sido desenvolvido com o laravel 8, é preciso que a versão do PHP seja igual ou superior a 7.4
+
+Para maiores detalhes de como o laravel 8 funciona, acesse sua documentação em https://laravel.com/docs
